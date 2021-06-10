@@ -15,9 +15,9 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
- 
-const galleryList = document.querySelector('#gallery');
-images.map(image => {
-  const {url, alt} = image;
-  galleryList.insertAdjacentHTML('afterbegin', `<li><img src = "${url}" alt = "${alt}" width = "640" height = "420"/></li>`);
+
+const galleryList = document.querySelector("#gallery");
+const markup = images.map(({ url, alt }) => {
+return `<li><img src = "${url}" alt = "${alt}" width = "640" height = "420"/></li>`;
 });
+galleryList.insertAdjacentHTML("afterbegin", markup.join(" "));
